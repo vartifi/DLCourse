@@ -1,0 +1,21 @@
+[project]
+name = "dlcourse"
+version = "0.1.0"
+description = "DL course tasks"
+readme = "README.md"
+authors = [
+    { name = "Vartifi", email = "vartifi@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+hw1 = [
+    "torch==2.11.0",
+    "torchvision==0.26.0",
+    "numpy==2.4.2",
+    "matplotlib==3.11.1",
+    "nbformat==5.11.1",
+    "nbclient==0.11.0",
+    "ipykernel==7.4.0",
+]

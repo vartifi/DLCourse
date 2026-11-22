@@ -1,0 +1,171 @@
+{
+  "track": "nlp",
+  "model": "prajjwal1/bert-tiny",
+  "revision": "6f75de8b60a9f8a2fdf7b69cbd86d9e64bcb3837",
+  "dataset": "leondz/wnut_17",
+  "classes": [
+    "corporation",
+    "creative-work",
+    "group",
+    "location",
+    "person",
+    "product"
+  ],
+  "n_train": 3394,
+  "n_val": 1009,
+  "n_test": 1287,
+  "params_total": 4371085,
+  "baseline": {
+    "majority": {
+      "f1_micro": 0.09287925696594426,
+      "f1_macro": 0.043699631000462535,
+      "precision": 0.3383458646616541,
+      "recall": 0.05382775119617225
+    },
+    "random_head": {
+      "f1_micro": 0.02070879590093937,
+      "f1_macro": 0.009880836231379628,
+      "precision": 0.01136896390060947,
+      "recall": 0.11602870813397129
+    }
+  },
+  "final": {
+    "f1_micro": 0.1606886657101865,
+    "f1_macro": 0.055668386498313294,
+    "precision": 0.35555555555555557,
+    "recall": 0.10379981464318813,
+    "token_f1": 0.14695863746958637,
+    "per_type": {
+      "corporation": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 66
+      },
+      "creative-work": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 142
+      },
+      "group": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 165
+      },
+      "location": {
+        "precision": 0.42857142857142855,
+        "recall": 0.02,
+        "f1-score": 0.038216560509554146,
+        "support": 150
+      },
+      "person": {
+        "precision": 0.3538961038961039,
+        "recall": 0.2540792540792541,
+        "f1-score": 0.29579375848032563,
+        "support": 429
+      },
+      "product": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 127
+      }
+    }
+  },
+  "ablation": {
+    "setting": "freeze",
+    "split": "validation",
+    "full": {
+      "f1_micro": 0.2548672566371682,
+      "f1_macro": 0.06290956749672347,
+      "precision": 0.4897959183673469,
+      "recall": 0.1722488038277512,
+      "seconds": 18.69117321498925,
+      "trainable_params": 4371085
+    },
+    "frozen": {
+      "f1_micro": 0.0,
+      "f1_macro": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "seconds": 11.823732414995902,
+      "trainable_params": 1677
+    }
+  },
+  "errors": {
+    "correct": 144,
+    "boundary": 46,
+    "type": 50,
+    "missed": 596,
+    "spurious": 27
+  },
+  "device": "cpu",
+  "train_time_sec": 18.69117321498925,
+  "fast_mode": false,
+  "dataset_revision": "e52a2d2a71ac1a051ca2d532eef28653c5c02603",
+  "statistics": {
+    "train": {
+      "sentences": 3394,
+      "entities": {
+        "location": 548,
+        "group": 264,
+        "corporation": 221,
+        "person": 660,
+        "creative-work": 140,
+        "product": 142
+      },
+      "span_length_mean": 1.6,
+      "span_length_p95": 3.0,
+      "sentence_length_mean": 18.482616381850324,
+      "sentence_length_p95": 30.0
+    },
+    "validation": {
+      "sentences": 1009,
+      "entities": {
+        "location": 74,
+        "creative-work": 105,
+        "person": 470,
+        "product": 114,
+        "group": 39,
+        "corporation": 34
+      },
+      "span_length_mean": 1.4952153110047848,
+      "span_length_p95": 3.0,
+      "sentence_length_mean": 15.592666005946482,
+      "sentence_length_p95": 38.0
+    },
+    "test": {
+      "sentences": 1287,
+      "entities": {
+        "location": 150,
+        "group": 165,
+        "person": 429,
+        "creative-work": 142,
+        "corporation": 66,
+        "product": 127
+      },
+      "span_length_mean": 1.6126042632066728,
+      "span_length_p95": 4.0,
+      "sentence_length_mean": 18.177156177156178,
+      "sentence_length_p95": 42.0
+    }
+  },
+  "roundtrip_changes": {
+    "train": 0,
+    "validation": 0,
+    "test": 0
+  },
+  "validation": {
+    "f1_micro": 0.2548672566371682,
+    "f1_macro": 0.06290956749672347,
+    "precision": 0.4897959183673469,
+    "recall": 0.1722488038277512
+  },
+  "seed": 0,
+  "epochs": 3,
+  "learning_rate": 0.0002,
+  "batch_size": 32,
+  "max_length": 128
+}
